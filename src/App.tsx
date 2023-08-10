@@ -16,7 +16,6 @@ import {
   useColorScheme,
   View,
 } from "react-native";
-
 import {
   Colors,
   DebugInstructions,
@@ -24,6 +23,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -65,7 +65,7 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaProvider style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? "light-content" : "dark-content"}
         backgroundColor={backgroundStyle.backgroundColor}
@@ -96,7 +96,7 @@ function App(): JSX.Element {
           <LearnMoreLinks />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
