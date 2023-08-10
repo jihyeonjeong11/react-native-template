@@ -3,6 +3,8 @@ module.exports = {
     "universe",
     "universe/shared/typescript-analysis",
     "plugin:react-hooks/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
   ],
   overrides: [
     {
@@ -24,4 +26,5 @@ module.exports = {
   rules: {
     "no-console": "error",
   },
+  plugins: ["jest", "testing-library"],
 };
